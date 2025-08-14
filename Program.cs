@@ -8,6 +8,8 @@ using Assignment3;
             var app = new FinanceApp();
             app.Run();
             Assignment3.HealthSystem.Run();
+            Assignment3.WarehouseSystem.Run();
+
 
         }
     }
