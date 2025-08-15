@@ -1,0 +1,5 @@
+Alice Smith (ID: 101): Score = 84, Grade = A
+Bob Johnson (ID: 102): Score = 76, Grade = B
+Clara Adams (ID: 103): Score = 67, Grade = C
+Dan Moore (ID: 104): Score = 52, Grade = D
+Eva Brown (ID: 105): Score = 45, Grade = F
