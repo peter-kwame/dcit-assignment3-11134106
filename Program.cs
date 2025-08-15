@@ -12,12 +12,15 @@ public class Program
         Assignment3.HealthSystem.Run();
         Assignment3.WarehouseSystem.Run();
 
-        RunGradingSystem(); // 👈 Added call to grading system
+        Console.WriteLine("\n=== Running Question 4: Grading System ===");
+        RunGradingSystem();
+
+        Console.WriteLine("\n=== Running Question 5: Inventory System ===");
+        RunInventorySystem();
     }
 
     public static void RunGradingSystem()
     {
-        // Use the output directory for both files
         string baseDir = Directory.GetCurrentDirectory();
         string inputFile = Path.Combine(baseDir, "students.txt");
         string outputFile = Path.Combine(baseDir, "report.txt");
@@ -51,5 +54,21 @@ public class Program
             Console.WriteLine("GradingSystem Error: An unexpected error occurred.");
             Console.WriteLine(ex.Message);
         }
+    }
+
+    public static void RunInventorySystem()
+    {
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "inventory.json");
+
+        var inventoryApp = new InventoryApp(filePath);
+
+        // Seed and save data
+        inventoryApp.SeedSampleData();
+        inventoryApp.SaveData();
+
+        // Simulate clearing memory and reloading
+        inventoryApp = new InventoryApp(filePath);
+        inventoryApp.LoadData();
+        inventoryApp.PrintAllItems();
     }
 }
