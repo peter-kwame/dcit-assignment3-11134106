@@ -1,0 +1,18 @@
+﻿# dcit-assignment3-11134106
+
+📘 DCIT 318 – Programming II
+Assignment 3 Summary
+
+This project implements a modular software solution in C# to address five distinct real-world scenarios, each mapped to a specific programming concept. It showcases the use of records, interfaces, sealed classes, generics, file I/O, and custom exception handling, as required in the assignment.
+
+In Question 1, a finance management system is built using immutable Transaction records and interface-driven transaction processors such as BankTransferProcessor, MobileMoneyProcessor, and CryptoWalletProcessor. A sealed SavingsAccount class ensures safe withdrawal rules, and a FinanceApp class integrates and processes transactions.
+
+Question 2 focuses on building a healthcare management system using a generic Repository<T> class to store both patients and prescriptions. Data is grouped using a Dictionary<int, List<Prescription>> for fast lookup, and prescriptions are retrieved per patient through filtering. The HealthSystemApp class seeds data, builds maps, and handles display logic.
+
+Question 3 introduces a warehouse inventory system with full exception safety. Two product types, ElectronicItem and GroceryItem, implement a common IInventoryItem interface. The InventoryRepository<T> supports adding, removing, updating items, and throws custom exceptions like DuplicateItemException, ItemNotFoundException, and InvalidQuantityException when errors occur. WareHouseManager manages both inventory types and demonstrates exception handling in action.
+
+In Question 4, a grading system reads student data from a students.txt file. It checks for formatting errors or missing fields using custom exceptions (InvalidScoreFormatException and MissingFieldException) and writes a clean report with grades to report.txt. The StudentResultProcessor handles file operations and validation, ensuring clean and structured output.
+
+Question 5 demonstrates the use of immutable records and generics through an inventory logging system. The InventoryItem record implements a marker interface and is logged using the generic InventoryLogger<T> class. Data is persisted in inventory.json and restored through file deserialization. The InventoryApp class seeds data, simulates saving and loading, and prints all items to confirm integrity.
+
+Each system is modular, with a clear separation of concerns, and is invoked from Program.cs. The project also includes input/output files such as students.txt and inventory.json. Exception handling is applied throughout to ensure user-friendly error messages and robust execution. This solution adheres to C# best practices and fully meets the assignment requirements.
